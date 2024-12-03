@@ -6,7 +6,7 @@ import 'package:news/screens/catigories/category_model.dart';
 class CategoryWidget extends StatelessWidget {
   CategoryWidget({super.key,required this.index,required this.categoryModel});
   final CategoryModel categoryModel;
-  int index;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
