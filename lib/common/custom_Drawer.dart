@@ -44,3 +44,4 @@ class CustomDrawer extends StatelessWidget {
 enum DrawerItem{
   categories,settings
 }
+// String category="";

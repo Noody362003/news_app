@@ -8,42 +8,43 @@ import 'category_wedgit.dart';
 class Categories extends StatelessWidget {
   Categories({super.key, required this.selected});
   final Function(CategoryModel) selected;
-  List<CategoryModel> categories = [
-    CategoryModel(
-        id: '1',
+  @override
+  Widget build(BuildContext context) {
+    List<CategoryModel> categories = [
+      CategoryModel(
+        id: 'sports',
         title: 'Sports',
         color: ColorsManager.sports,
         image: AssetsManager.sports,
 
-    ),
-    CategoryModel(
-        id: '2',
-        title: 'Politics',
-        color: ColorsManager.politics,
-        image: AssetsManager.politics),
-    CategoryModel(
-        id: '3',
-        title: 'Health',
-        color: ColorsManager.health,
-        image: AssetsManager.health),
-    CategoryModel(
-        id: '4',
-        title: 'Business',
-        color: ColorsManager.bussines,
-        image: AssetsManager.bussines),
-    CategoryModel(
-        id: '5',
-        title: 'Environment',
-        color: ColorsManager.environment,
-        image: AssetsManager.environment),
-    CategoryModel(
-        id: '6',
-        title: 'Science',
-        color: ColorsManager.science,
-        image: AssetsManager.science),
-  ];
-  @override
-  Widget build(BuildContext context) {
+      ),
+      CategoryModel(
+          id: 'general',
+          title: 'Politics',
+          color: ColorsManager.politics,
+          image: AssetsManager.politics),
+      CategoryModel(
+          id: 'health',
+          title: 'Health',
+          color: ColorsManager.health,
+          image: AssetsManager.health),
+      CategoryModel(
+          id: 'business',
+          title: 'Business',
+          color: ColorsManager.bussines,
+          image: AssetsManager.bussines),
+      CategoryModel(
+          id: 'technology',
+          title: 'Technology',
+          color: ColorsManager.environment,
+          image: AssetsManager.environment),
+      CategoryModel(
+          id: 'science',
+          title: 'Science',
+          color: ColorsManager.science,
+          image: AssetsManager.science),
+    ];
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
       child: Container(
