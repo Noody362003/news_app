@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:news/common/assets_manage.dart';
 import 'package:news/common/colors.dart';
 import '../../common/theme.dart';
-import 'category_model.dart';
+import 'models/category_model.dart';
 import 'category_wedgit.dart';
 
 class Categories extends StatelessWidget {
   Categories({super.key, required this.selected});
-  final Function(String) selected;
+  final Function(CategoryModel) selected;
   List<CategoryModel> categories = [
     CategoryModel(
         id: '1',
@@ -71,7 +71,7 @@ class Categories extends StatelessWidget {
                       maxCrossAxisExtent: 148),
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
-                      onTap: ()=>selected(categories[index].id),
+                      onTap: ()=>selected(categories[index]),
                       child: CategoryWidget(
                         index: index,
                         categoryModel: categories[index],
