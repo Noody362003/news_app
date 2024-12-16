@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/screens/catigories/categories.dart';
 import 'package:news/screens/catigories/category_details.dart';
+import 'package:news/screens/catigories/models/category_model.dart';
 import 'package:news/screens/settings/settings.dart';
 
 import '../common/assets_manage.dart';
@@ -15,7 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   DrawerItem drawerSelected = DrawerItem.categories;
-  String? selectedCatId;
+  CategoryModel? selectedCat;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,24 +29,31 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text('News App'),
+          title: selectedCat!=null?
+          Text(selectedCat!.title):
+          drawerSelected==DrawerItem.settings?
+          const Text('Settings'):
+          const Text('News App'),
+          actions:selectedCat!=null? [
+            IconButton(onPressed: (){}, icon: Icon(Icons.search,color: Colors.white,))
+          ]:null,
         ),
         drawer: CustomDrawer(
           selected: (value) {
             drawerSelected = value;
-            selectedCatId=null;
+            selectedCat=null;
             setState(() {});
           },
         ),
-        body: selectedCatId!=null
-            ?CategoryDetailsView(id: selectedCatId!)
+        body: selectedCat!=null
+            ?CategoryDetailsView(id: selectedCat!.id)
             : drawerSelected == DrawerItem.categories
             ? Categories(selected: (value){
-              selectedCatId=value;
+              selectedCat=value;
               setState(() {
               });
         },)
-            : const Settings(),
+            : Settings(),
       ),
     );
   }
