@@ -8,7 +8,7 @@ import 'models/sources_model.dart';
 import 'news_card.dart';
 
 class CategoryDetailsView extends StatefulWidget {
-  CategoryDetailsView({super.key, required this.id});
+  const CategoryDetailsView({super.key, required this.id});
   final String id;
   @override
   State<CategoryDetailsView> createState() => _CategoryDetailsViewState();
@@ -22,7 +22,7 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
         children: [
           FutureBuilder<SourcesModel>(future: ApiServices.getSources(widget.id), builder: (context,snapshot) {
             if(snapshot.connectionState==ConnectionState.waiting){
-              return Center(child: CircularProgressIndicator(),);
+              return const Center(child: CircularProgressIndicator(),);
             }else if(snapshot.hasError){
               return Center(child: Text('error: ${snapshot.error.toString()}'),);
             }

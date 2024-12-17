@@ -6,7 +6,7 @@ import 'models/category_model.dart';
 import 'category_wedgit.dart';
 
 class Categories extends StatelessWidget {
-  Categories({super.key, required this.selected});
+  const Categories({super.key, required this.selected});
   final Function(CategoryModel) selected;
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class Categories extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(AssetsManager.pattern), fit: BoxFit.cover)),
         child: Column(
@@ -65,7 +65,7 @@ class Categories extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child: GridView.builder(
                   itemCount: 6,
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                       mainAxisExtent: 171,
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,

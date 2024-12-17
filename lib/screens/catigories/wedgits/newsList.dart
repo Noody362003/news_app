@@ -34,7 +34,7 @@ class NewsList extends StatelessWidget {
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) => NewsCard(newsModel: newsList[index]),
+      itemBuilder: (context, index) => NewsCard(article: newsList[index]),
       itemCount: newsList.length,
       );
       },
