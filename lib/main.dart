@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           title: 'First Method',
           theme: AppTheme.light,
           onGenerateRoute: RoutesManager.router,
-          initialRoute: RoutesManager.home,
+          initialRoute: RoutesManager.splash,
         );
       },
       //child: Home(),
