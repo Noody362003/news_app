@@ -4,7 +4,7 @@ import 'package:news/common/colors.dart';
 import 'package:news/common/theme.dart';
 
 class CustomDrawer extends StatelessWidget {
-  CustomDrawer({super.key, required this.selected});
+  const CustomDrawer({super.key, required this.selected});
   final Function(DrawerItem) selected;
   @override
   Widget build(BuildContext context) {
@@ -44,4 +44,4 @@ class CustomDrawer extends StatelessWidget {
 enum DrawerItem{
   categories,settings
 }
-// String category="";
+
