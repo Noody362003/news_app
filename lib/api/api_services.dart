@@ -25,4 +25,14 @@ class ApiServices {
     return NewsModel.fromJson(json);
   }
 
+  static Future<NewsModel> searchNews(String query)async {
+    var url = Uri.https(ApiConsts.baseUrl, ApiConsts.newsEndPoint,
+        {'apikey': ApiConsts.apiKey, 'q': query});
+    var responce=await http.get(url);
+    String body=responce.body;
+    var json=jsonDecode(body);
+    return NewsModel.fromJson(json);
+  }
+
+
 }
